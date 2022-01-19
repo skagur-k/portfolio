@@ -20,6 +20,7 @@ import ThemeToggleButton from './theme-toggle-button'
 const LinkItem = ({ href, path, children }) => {
     const active = path === href
     const inactiveColor = useColorModeValue('gray200', 'whiteAlpha.900')
+
     return (
         <NextLink href={href}>
             <Link
@@ -54,7 +55,7 @@ const Navbar = props => {
                 justify="space-between"
             >
                 <Flex align="center" mr={5}>
-                    <Heading as="h1" size="lg" letterSpacing={'tighter'}>
+                    <Heading as="h1" size="lg" letterSpacing={'normal'}>
                         <Logo />
                     </Heading>
                 </Flex>
