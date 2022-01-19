@@ -5,7 +5,12 @@ import {
     Box,
     Heading,
     Image,
-    useColorModeValue
+    useColorModeValue,
+    SimpleGrid,
+    Icon,
+    Link,
+    List,
+    ListItem
 } from '@chakra-ui/react'
 
 import { ChevronRightIcon } from '@chakra-ui/icons'
@@ -13,6 +18,13 @@ import Section from '../components/section'
 import Paragraph from '../components/paragraph'
 import { BioSection, BioYear } from '../components/bio'
 import Layout from '../components/layouts/article'
+import { GridItem } from '../components/grid-item'
+import {
+    IoLogoInstagram,
+    IoLogoGithub,
+    IoLogoLinkedin,
+    IoMailOpen
+} from 'react-icons/io5'
 
 const Page = () => {
     return (
@@ -95,6 +107,47 @@ const Page = () => {
                         I ❤️
                     </Heading>
                     <Paragraph>Music, Movies, Football, Working out</Paragraph>
+                </Section>
+
+                <Section delay={0.4}>
+                    <Heading as="h3" variant="section-title">
+                        Contacts
+                    </Heading>
+                    <List>
+                        <ListItem>
+                            <Link href="" target="_blank">
+                                <Button
+                                    variant="ghost"
+                                    colorScheme="teal"
+                                    leftIcon={<Icon as={IoLogoGithub} />}
+                                >
+                                    @skagur-k
+                                </Button>
+                            </Link>
+                        </ListItem>
+                        <ListItem>
+                            <Link href="" target="_blank">
+                                <Button
+                                    variant="ghost"
+                                    colorScheme="teal"
+                                    leftIcon={<Icon as={IoLogoInstagram} />}
+                                >
+                                    @skagurzz
+                                </Button>
+                            </Link>
+                        </ListItem>
+                        <ListItem>
+                            <Link href="" target="_blank">
+                                <Button
+                                    variant="ghost"
+                                    colorScheme="teal"
+                                    leftIcon={<Icon as={IoMailOpen} />}
+                                >
+                                    namhyuck.james@gmail.com
+                                </Button>
+                            </Link>
+                        </ListItem>
+                    </List>
                 </Section>
             </Container>
         </Layout>
