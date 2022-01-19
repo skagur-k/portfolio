@@ -132,6 +132,17 @@ const Page = () => {
                                 <Button
                                     variant="ghost"
                                     colorScheme="teal"
+                                    leftIcon={<Icon as={IoLogoLinkedin} />}
+                                >
+                                    @skagur0329
+                                </Button>
+                            </Link>
+                        </ListItem>
+                        <ListItem>
+                            <Link href="" target="_blank">
+                                <Button
+                                    variant="ghost"
+                                    colorScheme="teal"
                                     leftIcon={<Icon as={IoMailOpenOutline} />}
                                 >
                                     namhyuck.james@gmail.com
