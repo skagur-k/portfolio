@@ -21,9 +21,10 @@ const Logo = () => {
                     <Text
                         color={useColorModeValue('gray.800', 'whiteAlpha.900')}
                         fontFamily="Roboto"
+                        fontSize={16}
                         ml={3}
                     >
-                        Nam Hyuck Kim
+                        namhyuck
                     </Text>
                 </LogoBox>
             </a>
