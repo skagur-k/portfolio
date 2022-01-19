@@ -21,7 +21,6 @@ const Logo = () => {
                     <Text
                         color={useColorModeValue('gray.800', 'whiteAlpha.900')}
                         fontFamily="Roboto"
-                        font-weight="bold"
                         ml={3}
                     >
                         Nam Hyuck Kim
