@@ -1,30 +1,33 @@
 {
-  "name": "skagur-portfolio",
-  "version": "1.1.0",
-  "description": "Nam Hyuck's Portfolio Webpage",
-  "scripts": {
-    "dev": "next dev -H 0.0.0.0",
-    "build": "next build",
-    "prettier": "prettier -write",
-    "lint": "next lint"
-  },
-  "keywords": [],
-  "author": "Nam Hyuck Kim",
-  "license": "MIT",
-  "dependencies": {
-    "@chakra-ui/icons": "^1.1.1",
-    "@chakra-ui/react": "^1.7.2",
-    "@emotion/react": "^11.7.0",
-    "@emotion/styled": "^11.6.0",
-    "framer-motion": "^5.3.3",
-    "next": "^12.0.4",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-icons": "^4.3.1"
-  },
-  "devDependencies": {
-    "eslint": "^7.32.0",
-    "eslint-config-next": "^12.0.4",
-    "prettier": "^2.5.0"
-  }
+    "name": "skagur-portfolio",
+    "version": "1.1.0",
+    "description": "Nam Hyuck's Portfolio Webpage",
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "prettier": "prettier --write",
+        "lint": "next lint"
+    },
+    "keywords": [],
+    "author": "Nam Hyuck Kim",
+    "license": "MIT",
+    "dependencies": {
+        "@chakra-ui/icons": "^1.1.1",
+        "@chakra-ui/react": "^1.7.2",
+        "@emotion/react": "^11.7.0",
+        "@emotion/styled": "^11.6.0",
+        "framer-motion": "^5.3.3",
+        "gray-matter": "^4.0.3",
+        "next": "^12.0.4",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "react-icons": "^4.3.1",
+        "remark": "^14.0.2",
+        "remark-html": "^15.0.1"
+    },
+    "devDependencies": {
+        "eslint": "^7.32.0",
+        "eslint-config-next": "^12.0.4",
+        "prettier": "^2.5.0"
+    }
 }

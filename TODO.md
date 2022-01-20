@@ -4,4 +4,5 @@
 - [ ] scroll bar
 - [ ] personalize colors
 - [ ] add hero page
+- [ ] add resume
 - [x] fix theme mode when refreshed

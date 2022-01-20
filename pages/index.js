@@ -28,7 +28,7 @@ const Page = () => {
     return (
         <Layout>
             <Container>
-                {/* <Profile /> */}
+                <Profile />
                 <Box
                     borderRadius="lg"
                     bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.300')}
