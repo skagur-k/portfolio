@@ -3,9 +3,11 @@ import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import { GridItem } from '../components/grid-item'
 import { getAllPosts } from '../lib/api'
+import InkDrop from '../public/images/inkdrop_eyecatch.png'
 
 const Posts = ({ allPosts }) => {
     console.log(allPosts)
+
     return (
         <Layout title="Posts">
             <Container>
@@ -13,17 +15,26 @@ const Posts = ({ allPosts }) => {
                     Popular Posts
                 </Heading>
                 <Section delay={0.1}></Section>
-                {allPosts.map(post => (
-                    <div key={post.title}>{post.slug}</div>
-                ))}
             </Container>
+            <SimpleGrid columns={[1, 1, 2]} gap={6}>
+                <Section delay={0.2}>
+                    {allPosts.map(post => {
+                        return (
+                            <GridItem
+                                key={post.id}
+                                thumbnail={InkDrop}
+                                title={post.title}
+                            />
+                        )
+                    })}
+                </Section>
+            </SimpleGrid>
         </Layout>
     )
 }
 
 export async function getStaticProps() {
     const allPosts = getAllPosts(['title', 'date', 'slug'])
-
     return {
         props: { allPosts }
     }

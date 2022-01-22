@@ -5,4 +5,6 @@
 - [ ] personalize colors
 - [ ] add hero page
 - [ ] add resume
+- [ ] eng/kor support
+- [ ] tag support
 - [x] fix theme mode when refreshed

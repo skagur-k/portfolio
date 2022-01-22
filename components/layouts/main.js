@@ -19,7 +19,7 @@ const Main = ({ children, router }) => {
                 {/* <Profile /> */}
                 {children}
             </Container>
-            <Footer />
+            <Footer/>
         </Box>
     )
 }
