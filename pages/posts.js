@@ -12,23 +12,27 @@ const Posts = ({ allPosts }) => {
         <Layout title="Posts">
             <Container>
                 <Heading as="h4" fontSize={20} mb={4} mt={4}>
-                    Popular Posts
+                    Posts
                 </Heading>
                 <Section delay={0.1}></Section>
+                <SimpleGrid columns={[1, 1, 2]} gap={6}>
+                    <Section delay={0.2}>
+                        {allPosts.map(post => {
+                            return (
+                                <>
+                                    <GridItem
+                                        // key={}
+                                        thumbnail={InkDrop}
+                                        title={post.title}
+                                        href={'/posts/' + post.slug}
+                                    />
+                                    {post.date}
+                                </>
+                            )
+                        })}
+                    </Section>
+                </SimpleGrid>
             </Container>
-            <SimpleGrid columns={[1, 1, 2]} gap={6}>
-                <Section delay={0.2}>
-                    {allPosts.map(post => {
-                        return (
-                            <GridItem
-                                key={post.id}
-                                thumbnail={InkDrop}
-                                title={post.title}
-                            />
-                        )
-                    })}
-                </Section>
-            </SimpleGrid>
         </Layout>
     )
 }

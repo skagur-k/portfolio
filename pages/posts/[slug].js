@@ -1,7 +1,7 @@
 import router, { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import { getPostBySlug, getAllPosts } from '../../lib/api'
-import { markdownToHtml } from '../../lib/markdownToHtml'
+import { marked } from 'marked'
 
 export default function Post({ post }) {
     const router = useRouter()
@@ -9,7 +9,13 @@ export default function Post({ post }) {
         return <ErrorPage statusCode={404} />
     }
 
-    return <p>post.title</p>
+    return (
+        <div>
+            <p>{post.title}</p>
+            <p>{post.date}</p>
+            <p>{post.content}</p>
+        </div>
+    )
 }
 
 export async function getStaticProps({ params }) {
@@ -19,12 +25,10 @@ export async function getStaticProps({ params }) {
         'slug',
         'content'
     ])
-
-    const content = await markdownToHtml(post.content || '')
-
+    const content = marked(post.content)
     return {
         props: {
-            posts: {
+            post: {
                 ...post,
                 content
             }
