@@ -1,20 +1,24 @@
-import router, { useRouter } from 'next/router'
-import ErrorPage from 'next/error'
+import NextLink from 'next/link'
+import Section from '../../components/section'
+import { Box, Button } from '@chakra-ui/react'
+import { ChevronLeftIcon } from '@chakra-ui/icons'
 import { getPostBySlug, getAllPosts } from '../../lib/api'
 import { marked } from 'marked'
 
 export default function Post({ post }) {
-    const router = useRouter()
-    if (!router.isFallback && !post?.slug) {
-        return <ErrorPage statusCode={404} />
-    }
-
     return (
-        <div>
+        <Section delay={0.1}>
+            <Box align="center" my={4}>
+                <NextLink href="/posts">
+                    <Button leftIcon={<ChevronLeftIcon />} colorScheme="teal">
+                        Go Back
+                    </Button>
+                </NextLink>
+            </Box>
             <p>{post.title}</p>
             <p>{post.date}</p>
             <p>{post.content}</p>
-        </div>
+        </Section>
     )
 }
 

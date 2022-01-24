@@ -6,31 +6,26 @@ import { getAllPosts } from '../lib/api'
 import InkDrop from '../public/images/inkdrop_eyecatch.png'
 
 const Posts = ({ allPosts }) => {
-    console.log(allPosts)
-
     return (
         <Layout title="Posts">
             <Container>
-                <Heading as="h4" fontSize={20} mb={4} mt={4}>
-                    Posts
-                </Heading>
-                <Section delay={0.1}></Section>
+                <Section delay={0.2}>
+                    <Heading as="h4" fontSize={20} mb={4} mt={4}>
+                        Posts
+                    </Heading>
+                </Section>
                 <SimpleGrid columns={[1, 1, 2]} gap={6}>
-                    <Section delay={0.2}>
-                        {allPosts.map(post => {
-                            return (
-                                <>
-                                    <GridItem
-                                        // key={}
-                                        thumbnail={InkDrop}
-                                        title={post.title}
-                                        href={'/posts/' + post.slug}
-                                    />
-                                    {post.date}
-                                </>
-                            )
-                        })}
-                    </Section>
+                    {allPosts.map(post => {
+                        return (
+                            <Section delay={0.2} key={post.title}>
+                                <GridItem
+                                    thumbnail={InkDrop}
+                                    title={post.title}
+                                    href={'/posts/' + post.slug}
+                                />
+                            </Section>
+                        )
+                    })}
                 </SimpleGrid>
             </Container>
         </Layout>
