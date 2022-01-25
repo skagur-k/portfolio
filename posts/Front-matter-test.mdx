@@ -6,10 +6,10 @@ summary: 'Learn how to create store in the server side and use the same store on
 
 ### Table of Contents
 
-1. [Overview](/blogs/hydrate-redux-state-in-nextjs#overview)
-2. [Brief introduction to redux and redux toolkit](/blogs/hydrate-redux-state-in-nextjs#brief-introduction-to-redux-and-redux-toolkit)
-3. [Introduction to Next.js](/blogs/hydrate-redux-state-in-nextjs#introduction-to-nextjs)
-4. [Combining Next.js with Redux Toolkit and Preserve State during SSR](/blogs/hydrate-redux-state-in-nextjs#combining-nextjs-with-redux-toolkit-and-preserve-state-during-ssr)
+1. [Overview]
+2. [Brief introduction to redux and redux toolkit]
+3. [Introduction to Next.js]
+4. [Combining Next.js with Redux Toolkit and Preserve State during SSR]
 
 ### Overview
 
@@ -57,17 +57,6 @@ First, we need to create a store.
 
 <br />
 
-```js:store.js
-const createStore = (preloadedState) => {
-  return configureStore({
-    reducer: {
-      nextRepo: nextSlice
-    },
-    preloadedState
-  });
-};
-```
-
 As you can see above, we pass the preloadedState value to the configureStore. This value is used
 to HYDRATE the state with the server fetched data — or any other pre-existing data for that matter.
 
@@ -79,23 +68,10 @@ whether our code is executing on the client-side or on the server, by checking t
 
 <br />
 
-```js:initialize-store.js
-let store;
-export const initialiseStore = (preloadedState) => {
-  let _store = store ?? createStore(preloadedState);
-
-  if (preloadedState && store) {
-   _store = createStore({ ...store.getState(), ...preloadedState });
-    store = undefined;
-  }
-
-  // For SSG and SSR always create a new store
-  if (typeof window === 'undefined') return _store;
-  // Create the store once in the client
-  if (!store) store = _store;
-
-  return _store;
-};
+```java:hello.java
+public static void main(String[] args){
+  System.out.println("HELLO WORLD!");
+}
 ```
 
 You can see that if a preloadedState is provided to the initialiseStore method and a store has been
@@ -113,27 +89,27 @@ My code snippet would be something like
 
 <br />
 
-```js:boards.js
+```js
 export async function getServerSideProps(context: AppContext) {
-  const appProps = {}
+    const appProps = {}
 
-  //initialise redux store on server side
-  const reduxStore = initialiseStore({});
-  const { dispatch } = reduxStore;
-  const res = await fetch('https://trello.com/api/boards')
-  const json = await res.json()
-  dispatch(setStars({ boards: json.boards }));
+    //initialise redux store on server side
+    const reduxStore = initialiseStore({})
+    const { dispatch } = reduxStore
+    const res = await fetch('https://trello.com/api/boards')
+    const json = await res.json()
+    dispatch(setStars({ boards: json.boards }))
 
-  appProps.pageProps = {
-    ...appProps.pageProps,
-    initialReduxState: reduxStore.getState(),
-  };
+    appProps.pageProps = {
+        ...appProps.pageProps,
+        initialReduxState: reduxStore.getState()
+    }
 
-  return {
-    props: {
-      ...appProps
-    }, // will be passed to the page component as props
-  }
+    return {
+        props: {
+            ...appProps
+        } // will be passed to the page component as props
+    }
 }
 ```
 
@@ -142,12 +118,12 @@ the SSR data to the client side.
 
 <br />
 
-```js:boards-page.js
+```js
 const BoardsPage = ({ initialReduxState }) => (
-  // Pass the store state and initialise at the client side
-  <Provider store={initialiseStore(initialReduxState)}>
-    <Boards />
-  </Provider>
+    // Pass the store state and initialise at the client side
+    <Provider store={initialiseStore(initialReduxState)}>
+        <Boards />
+    </Provider>
 )
 ```
 

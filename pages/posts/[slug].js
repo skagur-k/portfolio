@@ -6,7 +6,13 @@ import { ChevronLeftIcon } from '@chakra-ui/icons'
 import { getPostBySlug, getAllPosts } from '../../lib/api'
 import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
-import mdxPrism from 'mdx-prism'
+
+import { Global } from '@emotion/react'
+
+import rehypePrism from 'rehype-prism-plus'
+import remarkAutolinkHeadings from 'remark-autolink-headings'
+import remarkCodeTitles from 'remark-code-titles'
+import { prismDarkTheme } from '../../styles/prism'
 
 export default function Post({ post }) {
     return (
@@ -24,11 +30,8 @@ export default function Post({ post }) {
             </Box>
             <p>{post.title}</p>
             <p>{post.date}</p>
-
-            <MDXRemote
-                {...post.content}
-                components={{ ...MDXComponents }}
-            ></MDXRemote>
+            <Global styles={prismDarkTheme} />
+            <MDXRemote {...post.content} components={{ ...MDXComponents }} />
         </Section>
     )
 }
@@ -41,7 +44,10 @@ export async function getStaticProps({ params }) {
         'content'
     ])
     const content = await serialize(post.content, {
-        rehypePlugins: [mdxPrism]
+        mdxOptions: {
+            remarkPlugins: [remarkAutolinkHeadings, remarkCodeTitles],
+            rehypePlugins: [rehypePrism]
+        }
     })
     return {
         props: {
