@@ -1,5 +1,5 @@
 import NextLink from 'next/link'
-import Section from '../../components/section'
+import Section from '../../components/Misc/section'
 import MDXComponents from '../../components/MDXComponents'
 import { Box, Button } from '@chakra-ui/react'
 import { ChevronLeftIcon } from '@chakra-ui/icons'
@@ -10,16 +10,21 @@ import mdxPrism from 'mdx-prism'
 
 export default function Post({ post }) {
     return (
-        <Section delay={0.1}>
-            <Box align="center" my={4}>
+        <Section delay={0.01}>
+            <Box align="left" my={4}>
                 <NextLink href="/posts">
-                    <Button leftIcon={<ChevronLeftIcon />} colorScheme="teal">
+                    <Button
+                        fontSize={'0.8rem'}
+                        leftIcon={<ChevronLeftIcon />}
+                        colorScheme="teal"
+                    >
                         Go Back
                     </Button>
                 </NextLink>
             </Box>
             <p>{post.title}</p>
             <p>{post.date}</p>
+
             <MDXRemote
                 {...post.content}
                 components={{ ...MDXComponents }}

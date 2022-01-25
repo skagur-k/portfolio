@@ -9,9 +9,14 @@ import {
 const Profile = () => (
     <Box display={{ md: 'flex' }} mt={10}>
         <Box flexGrow={1}>
-            <Heading as="h2" variant="page-title">
-                Nam Hyuck Kim
-            </Heading>
+            <Box as="span">
+                <Heading as="h2" variant="page-title">
+                    {/* &lt; */}
+                    <Box as="span">Nam Hyuck Kim</Box>
+                    {/* /&gt; */}
+                </Heading>
+            </Box>
+
             <Divider my={1} />
             <p>( Developer / Entrepreneur / Entertainer)</p>
         </Box>
