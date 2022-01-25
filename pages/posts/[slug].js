@@ -1,9 +1,12 @@
 import NextLink from 'next/link'
 import Section from '../../components/section'
+import MDXComponents from '../../components/MDXComponents'
 import { Box, Button } from '@chakra-ui/react'
 import { ChevronLeftIcon } from '@chakra-ui/icons'
 import { getPostBySlug, getAllPosts } from '../../lib/api'
-import { marked } from 'marked'
+import { serialize } from 'next-mdx-remote/serialize'
+import { MDXRemote } from 'next-mdx-remote'
+import mdxPrism from 'mdx-prism'
 
 export default function Post({ post }) {
     return (
@@ -17,7 +20,10 @@ export default function Post({ post }) {
             </Box>
             <p>{post.title}</p>
             <p>{post.date}</p>
-            <p>{post.content}</p>
+            <MDXRemote
+                {...post.content}
+                components={{ ...MDXComponents }}
+            ></MDXRemote>
         </Section>
     )
 }
@@ -29,7 +35,9 @@ export async function getStaticProps({ params }) {
         'slug',
         'content'
     ])
-    const content = marked(post.content)
+    const content = await serialize(post.content, {
+        rehypePlugins: [mdxPrism]
+    })
     return {
         props: {
             post: {

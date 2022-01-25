@@ -17,12 +17,7 @@ import Paragraph from '../components/paragraph'
 import { BioSection, BioYear } from '../components/bio'
 import Layout from '../components/layouts/article'
 import Profile from '../components/profile'
-import {
-    IoLogoInstagram,
-    IoLogoGithub,
-    IoLogoLinkedin,
-    IoMailOpenOutline
-} from 'react-icons/io5'
+import ContactList from '../components/contact-list'
 
 const Page = () => {
     return (
@@ -104,52 +99,7 @@ const Page = () => {
                     <Heading as="h3" variant="section-title">
                         Contacts
                     </Heading>
-                    <List>
-                        <ListItem>
-                            <Link href="" target="_blank">
-                                <Button
-                                    variant="ghost"
-                                    colorScheme="teal"
-                                    leftIcon={<Icon as={IoLogoGithub} />}
-                                >
-                                    @skagur-k
-                                </Button>
-                            </Link>
-                        </ListItem>
-                        <ListItem>
-                            <Link href="" target="_blank">
-                                <Button
-                                    variant="ghost"
-                                    colorScheme="teal"
-                                    leftIcon={<Icon as={IoLogoInstagram} />}
-                                >
-                                    @skagurzz
-                                </Button>
-                            </Link>
-                        </ListItem>
-                        <ListItem>
-                            <Link href="" target="_blank">
-                                <Button
-                                    variant="ghost"
-                                    colorScheme="teal"
-                                    leftIcon={<Icon as={IoLogoLinkedin} />}
-                                >
-                                    @skagur0329
-                                </Button>
-                            </Link>
-                        </ListItem>
-                        <ListItem>
-                            <Link href="" target="_blank">
-                                <Button
-                                    variant="ghost"
-                                    colorScheme="teal"
-                                    leftIcon={<Icon as={IoMailOpenOutline} />}
-                                >
-                                    namhyuck.james@gmail.com
-                                </Button>
-                            </Link>
-                        </ListItem>
-                    </List>
+                    <ContactList />
                 </Section>
             </Container>
         </Layout>

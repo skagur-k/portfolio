@@ -15,9 +15,9 @@ const Posts = ({ allPosts }) => {
                     </Heading>
                 </Section>
                 <SimpleGrid columns={[1, 1, 2]} gap={6}>
-                    {allPosts.map(post => {
+                    {allPosts.map((post, index) => {
                         return (
-                            <Section delay={0.2} key={post.title}>
+                            <Section delay={0.2} key={index}>
                                 <GridItem
                                     thumbnail={InkDrop}
                                     title={post.title}
