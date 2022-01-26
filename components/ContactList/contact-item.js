@@ -1,24 +1,27 @@
 import { Button, Link, ListItem } from '@chakra-ui/react'
 
 const ContactItem = ({
-    variant = 'ghost',
+    variant = 'link',
     colorScheme = 'teal',
     leftIcon,
     href,
     children
 }) => {
     return (
-        <ListItem>
-            <Link href={href} target="_blank">
-                <Button
-                    variant={variant}
-                    colorScheme={colorScheme}
-                    leftIcon={leftIcon}
-                >
-                    {children}
-                </Button>
-            </Link>
-        </ListItem>
+        <Link
+            href={href}
+            target="_blank"
+            _focus={({ outline: 'none' }, { border: 'none' })}
+        >
+            <Button
+                as="a"
+                variant={variant}
+                colorScheme={colorScheme}
+                leftIcon={leftIcon}
+            >
+                {children}
+            </Button>
+        </Link>
     )
 }
 

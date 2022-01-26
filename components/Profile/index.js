@@ -19,7 +19,7 @@ const Profile = () => (
             </Box>
 
             <Divider my={1} />
-            <p>( Developer / Entrepreneur / Entertainerg)</p>
+            <p>( Developer / Entrepreneur / Entertainer)</p>
         </Box>
         <Box
             flexShrink={0}
