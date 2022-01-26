@@ -12,8 +12,7 @@ export const prismLightTheme = css`
     code[class*='language-'],
     pre[class*='language-'] {
         color: #393a34;
-        font-family: 'Consolas', 'Bitstream Vera Sans Mono', 'Courier New',
-            Courier, monospace;
+        font-family: 'Inter';
         direction: ltr;
         text-align: left;
         white-space: pre;
@@ -191,25 +190,27 @@ export const prismDarkTheme = css`
     pre[class*='language-'],
     code[class*='language-'] {
         color: #d4d4d4;
-        font-size: 13px;
-        text-shadow: none;
-        font-family: Menlo, Monaco, Consolas, 'Andale Mono', 'Ubuntu Mono',
-            'Courier New', monospace;
+        font-family: 'Inter';
         direction: ltr;
         text-align: left;
         white-space: pre;
         word-spacing: normal;
         word-break: normal;
-        line-height: 1.5;
+        font-size: 0.9em;
+        line-height: 1.2em;
+
         -moz-tab-size: 4;
         -o-tab-size: 4;
         tab-size: 4;
+
         -webkit-hyphens: none;
         -moz-hyphens: none;
         -ms-hyphens: none;
         hyphens: none;
     }
-
+    pre > code[class*='language-'] {
+        font-size: 1em;
+    }
     pre[class*='language-']::selection,
     code[class*='language-']::selection,
     pre[class*='language-'] *::selection,

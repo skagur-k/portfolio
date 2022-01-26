@@ -3,7 +3,8 @@ import {
     Heading,
     Image,
     useColorModeValue,
-    Divider
+    Divider,
+    Text
 } from '@chakra-ui/react'
 
 const Profile = () => (
@@ -18,7 +19,7 @@ const Profile = () => (
             </Box>
 
             <Divider my={1} />
-            <p>( Developer / Entrepreneur / Entertainer)</p>
+            <p>( Developer / Entrepreneur / Entertainerg)</p>
         </Box>
         <Box
             flexShrink={0}

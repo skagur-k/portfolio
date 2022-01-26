@@ -26,7 +26,7 @@ const LinkItem = ({ href, path, children }) => {
             <Link
                 p={2}
                 bg={active ? 'glassTeal' : undefined}
-                color={active ? '#202023' : inactiveColor}
+                color={active ? 'black' : inactiveColor}
             >
                 {children}
             </Link>
@@ -48,25 +48,26 @@ const Navbar = props => {
         >
             <Container
                 display="flex"
-                p={2}
-                maxW="container.md"
+                py={2}
+                px={4}
+                maxW=""
                 wrap="wrap"
                 align="center"
-                justify="space-between"
+                justify="flex-start"
             >
-                <Flex align="center" mr={5}>
+                <Box align="center">
                     <Heading as="h1" size="lg" letterSpacing={'normal'}>
                         <Logo />
                     </Heading>
-                </Flex>
+                </Box>
 
                 <Stack
-                    direction={{ base: 'column', md: 'row' }}
+                    direction="row"
                     display={{ base: 'none', md: 'flex' }}
-                    width={{ base: 'full', nmd: 'auto' }}
+                    width="auto"
                     alignItems="center"
-                    flexGrow={1}
-                    mt={{ base: 4, nmd: 0 }}
+                    flex={1}
+                    mt={{ base: 4, md: 0 }}
                 >
                     <LinkItem href="/works" path={path}>
                         Works
