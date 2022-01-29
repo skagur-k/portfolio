@@ -1,4 +1,4 @@
-import { Button, Link, ListItem } from '@chakra-ui/react'
+import { Button, Link } from '@chakra-ui/react'
 
 const ContactItem = ({
     variant = 'link',
@@ -8,16 +8,12 @@ const ContactItem = ({
     children
 }) => {
     return (
-        <Link
-            href={href}
-            target="_blank"
-            _focus={({ outline: 'none' }, { border: 'none' })}
-        >
+        <Link href={href} isExternal>
             <Button
-                as="a"
                 variant={variant}
                 colorScheme={colorScheme}
                 leftIcon={leftIcon}
+                _focus={({ boxShadow: 'none' }, { border: 0 }, { outline: 0 })}
             >
                 {children}
             </Button>

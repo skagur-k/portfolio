@@ -1,5 +1,5 @@
 import { Container, Heading, SimpleGrid } from '@chakra-ui/react'
-import Layout from '../components/layouts/article'
+import Layout from '../components/Layouts/article'
 import Section from '../components/Misc/section'
 import { GridItem } from '../components/Misc/grid-item'
 import { getAllPosts } from '../lib/mdxUtil'
@@ -9,7 +9,7 @@ const Posts = ({ allPosts }) => {
     return (
         <Layout title="Posts">
             <Container>
-                <Section delay={0.2}>
+                <Section delay={0}>
                     <Heading as="h4" fontSize={20} mb={4} mt={4}>
                         Posts
                     </Heading>
@@ -17,7 +17,7 @@ const Posts = ({ allPosts }) => {
                 <SimpleGrid columns={[1, 1, 2]} gap={6}>
                     {allPosts.map((post, index) => {
                         return (
-                            <Section delay={0.2} key={index}>
+                            <Section delay={0} key={index}>
                                 <GridItem
                                     thumbnail={InkDrop}
                                     title={post.title}

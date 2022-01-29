@@ -1,10 +1,10 @@
 import NextLink from 'next/link'
-import { Button, Container, Box, Heading } from '@chakra-ui/react'
+import { Button, Container, Box, Heading, Link } from '@chakra-ui/react'
 
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import Section from '../components/Misc/section'
 import Paragraph from '../components/Misc/paragraph'
-import Layout from '../components/layouts/article'
+import Layout from '../components/Layouts/article'
 import Profile from '../components/Profile'
 import ContactList from '../components/ContactList'
 import Description from '../components/Description'
@@ -17,7 +17,7 @@ const Page = () => {
                 <Profile />
                 <Description>Description goes here</Description>
 
-                <Section delay={0.1}>
+                <Section delay={0}>
                     <Heading as="h3" variant="section-title">
                         Works
                     </Heading>
@@ -37,14 +37,14 @@ const Page = () => {
 
                 <Biography />
 
-                <Section delay={0.3}>
+                <Section delay={0}>
                     <Heading as="h3" variant="section-title">
                         I ❤️
                     </Heading>
                     <Paragraph>Music, Movies, Football, Working out</Paragraph>
                 </Section>
 
-                <Section delay={0.4}>
+                <Section delay={0}>
                     <Heading as="h3" variant="section-title">
                         Contacts
                     </Heading>

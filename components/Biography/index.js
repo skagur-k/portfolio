@@ -9,13 +9,14 @@ const Biography = () => {
     ]
 
     return (
-        <Section delay={0.2}>
+        <Section delay={0}>
             <Heading as="h3" variant="section-title">
                 Bio
             </Heading>
-            {biography.map(item => {
+            {biography.map((item, index) => {
+                console.log(index)
                 return (
-                    <BioSection key={item.index}>
+                    <BioSection key={index}>
                         <BioYear>{item.year}</BioYear>
                         {item.content}
                     </BioSection>

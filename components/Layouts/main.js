@@ -22,8 +22,8 @@ const Main = ({ children }) => {
                 />
                 <title>Nam Hyuck Kim</title>
             </Head>
-            <Navbar path={router.asPath} py={2} />
-            <Container pt={20} {...baseStyle}>
+            <Navbar path={router.asPath} />
+            <Container pt={[12, 12, 36, 36]} {...baseStyle}>
                 {children}
             </Container>
             <Footer />

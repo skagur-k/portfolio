@@ -1,8 +1,12 @@
 import { Container, Badge, Link, List, ListItem } from '@chakra-ui/react'
-import { ExternalLinkIcon } from '@chakra-ui/icons'
-import { Title, WorkImage, Meta } from '../../components/WorkDetails'
+import {
+    Title,
+    WorkImage,
+    Meta,
+    ExternalLink
+} from '../../components/WorkDetails'
 import Paragraph from '../../components/Misc/paragraph'
-import Layout from '../../components/layouts/article'
+import Layout from '../../components/Layouts/article'
 
 const Work = () => {
     return (
@@ -15,9 +19,7 @@ const Work = () => {
                 <List ml={4} my={4}>
                     <ListItem>
                         <Meta>Website</Meta>
-                        <Link href="https://www.google.com">
-                            Google.com <ExternalLinkIcon mx="2px" />
-                        </Link>
+                        <ExternalLink>Google.com</ExternalLink>
                     </ListItem>
                     <ListItem>
                         <Meta>Platform</Meta>

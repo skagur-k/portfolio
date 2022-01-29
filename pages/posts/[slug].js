@@ -19,7 +19,7 @@ export default function Post({ post }) {
     const { colorMode } = useColorMode()
     const prismTheme = colorMode === 'light' ? prismLightTheme : prismDarkTheme
     return (
-        <Section delay={0.01}>
+        <Section delay={0}>
             <Box align="left" my={4}>
                 <NextLink href="/posts">
                     <Button

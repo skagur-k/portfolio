@@ -8,7 +8,7 @@ import {
 } from '@chakra-ui/react'
 
 const Profile = () => (
-    <Box display={{ md: 'flex' }} mt={10}>
+    <Box display={{ md: 'flex' }}>
         <Box flexGrow={1}>
             <Box as="span">
                 <Heading as="h2" variant="page-title">
