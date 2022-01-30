@@ -5,7 +5,6 @@ import {
     Meta,
     ExternalLink
 } from '../../components/WorkDetails'
-import Paragraph from '../../components/Misc/paragraph'
 import Layout from '../../components/Layouts/article'
 
 const Work = () => {
@@ -15,7 +14,7 @@ const Work = () => {
                 <Title>
                     Test <Badge>2020</Badge>
                 </Title>
-                <Paragraph>This is a test paragraph</Paragraph>
+
                 <List ml={4} my={4}>
                     <ListItem>
                         <Meta>Website</Meta>

@@ -1,4 +1,4 @@
-import Section from '../Misc/section'
+import Section from '../Section'
 import { Heading } from '@chakra-ui/react'
 import { BioSection, BioYear } from './bio'
 

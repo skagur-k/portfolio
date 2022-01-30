@@ -13,7 +13,7 @@ import {
     Container
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
-import ThemeToggleButton from '../Misc/theme-toggle-button'
+import ThemeToggleButton from '../ThemeToggleButton'
 
 export const NavbarWrapper = ({ props, children }) => {
     return (

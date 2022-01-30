@@ -1,5 +1,5 @@
 import NextLink from 'next/link'
-import Section from '../../components/Misc/section'
+import Section from '../../components/Section'
 import MDXComponents from '../../components/MDXComponents'
 import { Box, Button, useColorMode } from '@chakra-ui/react'
 import { ChevronLeftIcon } from '@chakra-ui/icons'

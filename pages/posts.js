@@ -1,7 +1,7 @@
 import { Container, Heading, SimpleGrid } from '@chakra-ui/react'
 import Layout from '../components/Layouts/article'
-import Section from '../components/Misc/section'
-import { GridItem } from '../components/Misc/grid-item'
+import Section from '../components/Section'
+import { GridItem } from '../components/grid-item'
 import { getAllPosts } from '../lib/mdxUtil'
 import InkDrop from '../public/images/inkdrop_eyecatch.png'
 
@@ -10,9 +10,7 @@ const Posts = ({ allPosts }) => {
         <Layout title="Posts">
             <Container>
                 <Section delay={0}>
-                    <Heading as="h4" fontSize={20} mb={4} mt={4}>
-                        Posts
-                    </Heading>
+                    <Heading as="h4">Posts</Heading>
                 </Section>
                 <SimpleGrid columns={[1, 1, 2]} gap={6}>
                     {allPosts.map((post, index) => {

@@ -2,8 +2,7 @@ import NextLink from 'next/link'
 import { Button, Container, Box, Heading, Link } from '@chakra-ui/react'
 
 import { ChevronRightIcon } from '@chakra-ui/icons'
-import Section from '../components/Misc/section'
-import Paragraph from '../components/Misc/paragraph'
+import Section from '../components/Section'
 import Layout from '../components/Layouts/article'
 import Profile from '../components/Profile'
 import ContactList from '../components/ContactList'
@@ -21,13 +20,12 @@ const Page = () => {
                     <Heading as="h3" variant="section-title">
                         Works
                     </Heading>
-                    <Paragraph>Paragraph</Paragraph>
 
                     <Box align="center" my={4}>
                         <NextLink href="/works">
                             <Button
                                 rightIcon={<ChevronRightIcon />}
-                                colorScheme="teal"
+                                colorScheme="orange"
                             >
                                 My Portfolio
                             </Button>
@@ -41,7 +39,6 @@ const Page = () => {
                     <Heading as="h3" variant="section-title">
                         I ❤️
                     </Heading>
-                    <Paragraph>Music, Movies, Football, Working out</Paragraph>
                 </Section>
 
                 <Section delay={0}>

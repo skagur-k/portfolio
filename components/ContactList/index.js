@@ -1,4 +1,4 @@
-import { List, Icon, Box, HStack } from '@chakra-ui/react'
+import { List, Icon, Box, SimpleGrid } from '@chakra-ui/react'
 import ContactItem from './contact-item'
 import {
     IoLogoInstagram,
@@ -10,7 +10,7 @@ import {
 const ContactList = () => {
     return (
         <Box>
-            <HStack justify="space-around">
+            <SimpleGrid columns={[1, 3]} spacingY="4">
                 <ContactItem
                     href="http://www.google.com"
                     leftIcon={<Icon as={IoLogoGithub} />}
@@ -29,7 +29,7 @@ const ContactList = () => {
                 >
                     skagur0329
                 </ContactItem>
-            </HStack>
+            </SimpleGrid>
         </Box>
     )
 }

@@ -1,6 +1,6 @@
 import { Container, Heading, SimpleGrid } from '@chakra-ui/react'
 import Layout from '../components/Layouts/article'
-import Section from '../components/Misc/section'
+import Section from '../components/Section'
 
 const Posts = ({ allPosts }) => {
     return (

@@ -7,8 +7,7 @@ import { useRouter } from 'next/router'
 const baseStyle = {
     w: '100%',
     mx: 'auto',
-    maxW: '65ch',
-    px: '1rem'
+    maxW: '65ch'
 }
 
 const Main = ({ children }) => {
@@ -23,7 +22,7 @@ const Main = ({ children }) => {
                 <title>Nam Hyuck Kim</title>
             </Head>
             <Navbar path={router.asPath} />
-            <Container pt={[12, 12, 36, 36]} {...baseStyle}>
+            <Container pt={[12, 12, 24, 24]} variant={'layout-main-container'}>
                 {children}
             </Container>
             <Footer />
