@@ -3,7 +3,7 @@ import Layout from '../components/Layouts/article'
 import Section from '../components/Section'
 import { GridItem } from '../components/grid-item'
 import { getAllPosts } from '../lib/mdxUtil'
-import InkDrop from '../public/images/inkdrop_eyecatch.png'
+import InkDrop from '../../public/images/inkdrop_eyecatch.png'
 
 const Posts = ({ allPosts }) => {
     return (

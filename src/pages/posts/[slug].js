@@ -1,13 +1,12 @@
 import NextLink from 'next/link'
+import { Global } from '@emotion/react'
 import Section from '../../components/Section'
 import MDXComponents from '../../components/MDXComponents'
+import { getPostBySlug, getAllPosts } from '../../lib/mdxUtil'
 import { Box, Button, useColorMode } from '@chakra-ui/react'
 import { ChevronLeftIcon } from '@chakra-ui/icons'
-import { getPostBySlug, getAllPosts } from '../../lib/mdxUtil'
 import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
-
-import { Global } from '@emotion/react'
 
 import rehypePrism from 'rehype-prism-plus'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'

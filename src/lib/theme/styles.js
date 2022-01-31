@@ -8,7 +8,6 @@ const styles = {
         body: {
             bg: mode('#FFFFFF', '#222222')(props),
             color: mode('gray.800', 'whiteAlpha.900')(props),
-            fontSize: '16px',
             lineHeight: 'base'
         }
     })
