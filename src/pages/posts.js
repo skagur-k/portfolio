@@ -1,9 +1,9 @@
-import { Container, Heading, SimpleGrid } from '@chakra-ui/react'
 import Layout from '../components/Layouts/article'
 import Section from '../components/Section'
-import { GridItem } from '../components/grid-item'
-import { getAllPosts } from '../lib/mdxUtil'
 import InkDrop from '../../public/images/inkdrop_eyecatch.png'
+import { Container, Heading, SimpleGrid } from '@chakra-ui/react'
+import { GridItem } from '../components/grid-item'
+import { getAllPosts } from '../lib/api/mdxUtil'
 
 const Posts = ({ allPosts }) => {
     return (

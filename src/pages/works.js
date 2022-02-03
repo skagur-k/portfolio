@@ -1,9 +1,8 @@
-import { Container, Box, Heading, SimpleGrid, Divider } from '@chakra-ui/react'
 import Section from '../components/Section'
-import { WorkGridItem } from '../components/grid-item'
-
 import InkDrop from '../../public/images/inkdrop_eyecatch.png'
 import Layout from '../components/Layouts/article'
+import { Container, Box, Heading, SimpleGrid, Divider } from '@chakra-ui/react'
+import { WorkGridItem } from '../components/grid-item'
 
 const Works = () => {
     return (
